@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
+import{Image, StyleSheet} from 'react-native'
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
@@ -13,25 +13,80 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-      }}>
+        tabBarStyle: {
+          backgroundColor: "#7DC8F7",
+          height: 100,
+        }
+      }}
+      initialRouteName='index'>
       <Tabs.Screen
-        name="index"
+        name="profile"
         options={{
-          title: 'Home',
+          title: '',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <Image 
+            style={styles.stretch}
+            source={require('../../assets/images/profile.png')}></Image>
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="leaderboard"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          title: '',
+          tabBarIcon: () => (
+          
+            <Image 
+            style={styles.stretch}
+            source={require('../../assets/images/leaderboard.png')}></Image>
           ),
         }}
       />
+       <Tabs.Screen
+       name="index"
+        options={{
+          title: '',
+          tabBarIcon: () => (
+            <Image 
+            style={styles.stretch}
+            source={require('../../assets/images/house.png')}></Image>
+          ),
+        }}
+      />
+      
+      <Tabs.Screen
+       name="pet"
+        options={{
+          title: '',
+          tabBarIcon: () => (
+            <Image 
+            style={styles.stretch}
+            source={require('../../assets/images/dog.png')}></Image>
+          ),
+        }}
+      />
+       <Tabs.Screen
+       name="settings"
+        options={{
+          title: '',
+          tabBarIcon: () => (
+            <Image 
+            style={styles.stretch}
+            source={require('../../assets/images/setting.png')}></Image>
+          ),
+        }}
+      />
+      
+
     </Tabs>
   );
+  
 }
+
+const styles = StyleSheet.create({
+  stretch: {
+    top: 18,
+    width: 45,
+    height: 45,
+  }
+})
