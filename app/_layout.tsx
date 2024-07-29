@@ -30,7 +30,20 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="level1" options={{ headerShown: false }} />
+        <Stack.Screen name="level1part2" options={{ headerShown: false }} />
+        <Stack.Screen name="level1part3" options={{ headerShown: false }} />
+        <Stack.Screen name="level1read" options={{ headerShown: false }} />
+        <Stack.Screen name="expand" options={{ headerShown: false }} />
+        <Stack.Screen name="levelread2" options={{ headerShown: false }} />
+        <Stack.Screen name="expand2" options={{ headerShown: false }} />
+        <Stack.Screen name="levelread3" options={{ headerShown: false }} />
+        <Stack.Screen name="expand3" options={{ headerShown: false }} />
+        <Stack.Screen name="writing1" options={{ headerShown: false }} />
+        <Stack.Screen name="writing2" options={{ headerShown: false }} />
+        <Stack.Screen name="writing3" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
+        <Stack.Screen name="test"/>
       </Stack>
     </ThemeProvider>
   );

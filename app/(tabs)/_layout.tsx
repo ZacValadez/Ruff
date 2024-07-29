@@ -18,6 +18,7 @@ export default function TabLayout() {
           height: 100,
         }
       }}
+
       initialRouteName='index'>
       <Tabs.Screen
         name="profile"
@@ -30,18 +31,9 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="leaderboard"
-        options={{
-          title: '',
-          tabBarIcon: () => (
-          
-            <Image 
-            style={styles.stretch}
-            source={require('../../assets/images/leaderboard.png')}></Image>
-          ),
-        }}
-      />
+  
+        
+      
        <Tabs.Screen
        name="index"
         options={{
@@ -54,17 +46,7 @@ export default function TabLayout() {
         }}
       />
       
-      <Tabs.Screen
-       name="pet"
-        options={{
-          title: '',
-          tabBarIcon: () => (
-            <Image 
-            style={styles.stretch}
-            source={require('../../assets/images/dog.png')}></Image>
-          ),
-        }}
-      />
+  
        <Tabs.Screen
        name="settings"
         options={{
@@ -86,7 +68,7 @@ export default function TabLayout() {
 const styles = StyleSheet.create({
   stretch: {
     top: 18,
-    width: 45,
-    height: 45,
+    width: 60,
+    height: 60,
   }
 })
