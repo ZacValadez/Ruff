@@ -18,8 +18,8 @@ export default function TabLayout() {
           height: 100,
         }
       }}
-
-      initialRouteName='index'>
+      // initialRouteName='home'
+      >
       <Tabs.Screen
         name="profile"
         options={{
@@ -35,7 +35,7 @@ export default function TabLayout() {
         
       
        <Tabs.Screen
-       name="index"
+       name="home"
         options={{
           title: '',
           tabBarIcon: () => (

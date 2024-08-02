@@ -160,6 +160,12 @@ import {
                   source={require("../assets/images/expand.png")}
                 />
               </Pressable>
+              <Pressable onPress={() => router.push("tip")}>
+                <Image
+                  style={styles.tip}
+                  source={require("../assets/images/tipbutton.png")}
+                />
+              </Pressable>
       </View>
     );
   };
@@ -229,8 +235,12 @@ import {
     },
     expand:{
 left:50,
-top:-145,
+top:-120,
     },
+    tip:{
+      top:-165,
+      left:-160,
+    }
   });
   
   export default App;

@@ -162,6 +162,12 @@ const App = () => {
           source={require("../assets/images/expand.png")}
         />
       </Pressable>
+      <Pressable onPress={() => router.push("tip2")}>
+                <Image
+                  style={styles.tip}
+                  source={require("../assets/images/tipbutton.png")}
+                />
+              </Pressable>
     </View>
   );
 };
@@ -237,6 +243,10 @@ const styles = StyleSheet.create({
     left: -15,
     top: -70,
   },
+  tip:{
+    top:-180,
+    left:-160,
+  }
 });
 
 export default App;

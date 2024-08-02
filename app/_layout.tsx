@@ -30,6 +30,9 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="nothave" options={{ headerShown: false }} />
+        <Stack.Screen name="have" options={{ headerShown: false }} />
         <Stack.Screen name="level1" options={{ headerShown: false }} />
         <Stack.Screen name="level1part2" options={{ headerShown: false }} />
         <Stack.Screen name="level1part3" options={{ headerShown: false }} />
@@ -42,8 +45,15 @@ export default function RootLayout() {
         <Stack.Screen name="writing1" options={{ headerShown: false }} />
         <Stack.Screen name="writing2" options={{ headerShown: false }} />
         <Stack.Screen name="writing3" options={{ headerShown: false }} />
+        <Stack.Screen name="stats" options={{ headerShown: false }} />
+        <Stack.Screen name="tip" options={{ headerShown: false }} />
+        <Stack.Screen name="tip2" options={{ headerShown: false }} />
+        <Stack.Screen name="tip3" options={{ headerShown: false }} />
+        <Stack.Screen name="leaderboard" options={{ headerShown: false }} />
+        <Stack.Screen name="badge" options={{ headerShown: false }} />
+        <Stack.Screen name="friends" options={{ headerShown: false }} />
+        <Stack.Screen name="nothave2" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
-        <Stack.Screen name="test"/>
       </Stack>
     </ThemeProvider>
   );

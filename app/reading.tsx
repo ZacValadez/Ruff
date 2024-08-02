@@ -1,4 +1,5 @@
 import LevelButton from "@/components/LevelButton";
+import Arrows from '@/components/Arrows';
 import {
   StyleSheet,
   View,
@@ -9,12 +10,15 @@ import {
   Pressable,
 } from "react-native";
 import { useRouter } from "expo-router";
-export default function reading() {
+export default function reading({ onLeftArrowPress, onRightArrowPress }) {
   const router = useRouter();
 
   return (
     <View>
-     
+         <Image
+        style={styles.background}
+        source={require("../assets/images/subjectback.png")}
+      ></Image>
       <Image
         style={styles.dog2}
         source={require("../assets/images/dog2.png")}
@@ -88,11 +92,28 @@ export default function reading() {
         style={styles.dotlineread6}
         source={require("../assets/images/dotlineread6.png")}
       ></Image>
+<View style={styles.container}>
+      {/* Your Reading component content */}
+      <Arrows
+        top={-530}
+        left={70}
+        right={70}
+        onLeftArrowPress={onLeftArrowPress}
+        onRightArrowPress={onRightArrowPress}
+      />
+    </View>
 
     </View>
   );
 }
 const styles = StyleSheet.create({
+  background:{
+    position:"absolute",
+    top:0,
+    left:-300,
+    width:900,
+    height:900,
+      },
   subjectreading: {
     position: "absolute",
     top: 73,
@@ -153,17 +174,6 @@ const styles = StyleSheet.create({
     width: 90,
     height: 90,
   },
-
-  leftarrow: {
-    position: "absolute",
-    top: -170,
-    left: 45,
-  },
-  rightarrow: {
-    position: "absolute",
-    top: -170,
-    right: 60,
-  },
   dog2: {
     top: 410,
     left: -10,
@@ -192,5 +202,10 @@ const styles = StyleSheet.create({
   dotlineread6: {
     top:-300,
     left:110,
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

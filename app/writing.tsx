@@ -1,4 +1,5 @@
 import LevelButton from "@/components/LevelButton";
+import Arrows from '@/components/Arrows';
 import {
   StyleSheet,
   View,
@@ -9,11 +10,15 @@ import {
   Pressable,
 } from "react-native";
 import { useRouter } from "expo-router";
-export default function writing() {
+export default function writing({ onLeftArrowPress, onRightArrowPress }) {
   const router = useRouter();
 
   return (
     <View>
+          <Image
+        style={styles.background}
+        source={require("../assets/images/subjectback.png")}
+      ></Image>
       <Image
         style={styles.levelwriting}
         source={require("../assets/images/Group 89.png")}
@@ -40,10 +45,27 @@ export default function writing() {
         style={styles.dog3}
         source={require("../assets/images/dog3.png")}
       ></Image>
+      <View style={styles.container}>
+      {/* Your Writing component content */}
+      <Arrows
+        top={-85}
+        left={70}
+        right={70}
+        onLeftArrowPress={onLeftArrowPress}
+        onRightArrowPress={onRightArrowPress}
+      />
+    </View>
     </View>
   );
 }
 const styles = StyleSheet.create({
+  background:{
+    position:"absolute",
+    top:0,
+    left:-300,
+    width:900,
+    height:900,
+      },
   levelwriting: {
     position: "absolute",
     top: 73,
@@ -75,5 +97,10 @@ const styles = StyleSheet.create({
     top: 660,
     left: 0,
     zIndex: 1000,
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

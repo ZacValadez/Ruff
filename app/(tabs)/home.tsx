@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Image, Pressable } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import Math from '@/app/math';
 import Reading from '@/app/reading';
 import Writing from '@/app/writing';
+import Arrows from '@/components/Arrows';
 
 export default function Home() {
   const router = useRouter();
@@ -12,13 +13,33 @@ export default function Home() {
   const renderActiveComponent = () => {
     switch (activeComponent) {
       case 'Math':
-        return <Math />;
+        return (
+          <Math
+            onLeftArrowPress={handleLeftArrowPress}
+            onRightArrowPress={handleRightArrowPress}
+          />
+        );
       case 'Reading':
-        return <Reading />;
+        return (
+          <Reading
+            onLeftArrowPress={handleLeftArrowPress}
+            onRightArrowPress={handleRightArrowPress}
+          />
+        );
       case 'Writing':
-        return <Writing />;
+        return (
+          <Writing
+            onLeftArrowPress={handleLeftArrowPress}
+            onRightArrowPress={handleRightArrowPress}
+          />
+        );
       default:
-        return <Reading />;
+        return (
+          <Reading
+            onLeftArrowPress={handleLeftArrowPress}
+            onRightArrowPress={handleRightArrowPress}
+          />
+        );
     }
   };
 
@@ -39,35 +60,14 @@ export default function Home() {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       {renderActiveComponent()}
-      <Pressable onPress={handleLeftArrowPress}>
-        <Image
-          style={styles.leftarrow}
-          source={require("../../assets/images/leftarrow.png")}
-        />
-      </Pressable>
-      <Pressable onPress={handleRightArrowPress}>
-        <Image
-          style={styles.rightarrow}
-          source={require("../../assets/images/rightarrow.png")}
-        />
-      </Pressable>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  rightarrow: {
-    position: "absolute",
-    top: -90,
-    right: 74,
-    zIndex: 100,
-  },
-  leftarrow: {
-    position: "absolute",
-    top: -90,
-    left: 64,
-    zIndex: 100,
+  container: {
+    flex: 1,
   },
 });
