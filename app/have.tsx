@@ -16,7 +16,7 @@ export default function Login() {
       </Pressable>
       <Image
         style={styles.leaderboard}
-        source={require("../assets/images/have3.png")}
+        source={require("../assets/images/140.png")}
       />
     </View>
   );
@@ -24,11 +24,11 @@ export default function Login() {
 
 const styles = StyleSheet.create({
   leaderboard: {
-    top: 0,
+    top: -60,
     zIndex: -5,
   },
   backbutton: {
-    top: 850,
+    top: 860,
     left: 45,
     zIndex: 100,
   },

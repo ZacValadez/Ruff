@@ -16,8 +16,14 @@ export default function Login() {
       </Pressable>
       <Image
         style={styles.leaderboard}
-        source={require("../assets/images/not have.png")}
+        source={require("../assets/images/nothave.png")}
       />
+              <Pressable onPress={() => router.back()}>
+          <Image
+            style={styles.back}
+            source={require("../assets/images/backbutton.png")}
+          />
+        </Pressable>
     </View>
   );
 }
@@ -31,5 +37,10 @@ const styles = StyleSheet.create({
     top: 823,
     left: 198,
     zIndex: 100,
+  },
+  back:{
+position:"absolute",
+top:-790,
+left:50,
   },
 });
